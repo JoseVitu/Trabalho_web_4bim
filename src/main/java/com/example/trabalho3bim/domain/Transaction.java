@@ -2,6 +2,7 @@ package com.example.trabalho3bim.domain;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.util.Date;
@@ -18,6 +19,7 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+    @Size(max = 255)
     private String description;
     private CategoryTypeEnum categoryTypeEnum;
 }

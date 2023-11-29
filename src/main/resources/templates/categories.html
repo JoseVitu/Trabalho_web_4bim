@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -41,7 +40,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Categorias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Consultar Lançamentos</a>
+                    <a class="nav-link" href="/transaction">Transações</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Relatórios</a>
@@ -94,7 +93,6 @@
                         <th scope="col">ID</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Tipo</th>
-                        <th scope="col">Ações</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -103,11 +101,6 @@
                         <td th:text="${category.id}">1</td>
                         <td th:text="${category.name}">Categoria</td>
                         <td th:text="${category.categoryTypeEnum}">Tipo</td>
-                        <td>
-
-                            <a th:href="@{/category/edit/{id}(id=${category.id})}" class="btn btn-sm btn-primary">Editar</a>
-                            <a th:href="@{/category/delete/{id}(id=${category.id})}" class="btn btn-sm btn-danger">Deletar</a>
-                        </td>
                     </tr>
                     </tbody>
                 </table>
