@@ -4,6 +4,7 @@ package com.example.trabalho3bim.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -15,6 +16,8 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Double amount;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
     private Date transactionDate;
     @ManyToOne
     @JoinColumn(name = "category_id")
