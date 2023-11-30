@@ -45,6 +45,15 @@ public class TransactionService {
         return transactionRepository.findByCategoryTypeEnum(type);
     }
 
+    public double sumByType(CategoryTypeEnum type){
+        Double sum = transactionRepository.sumAmountByCategoryType(type);
+        return sum != null ? sum : 0.0;
+    }
+
+    public List<Transaction> findLast10(){
+        return transactionRepository.findTop10ByOrderByTransactionDateDesc();
+    }
+
 
     public void delete(Long id){
         transactionRepository.deleteById(id);

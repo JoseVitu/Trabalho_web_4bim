@@ -35,6 +35,7 @@ public class TransactionController {
         return "transactions";
     }
 
+
     @GetMapping("/insert")
     public String showInsertTransactionForm(Model model){
         model.addAttribute("transaction", new Transaction());
